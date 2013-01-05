@@ -1,0 +1,12 @@
+--- sysdeps/ieee754/dbl-64/s_fma.c.bak	2012-10-05 10:15:00.759032119 -0700
++++ sysdeps/ieee754/dbl-64/s_fma.c	2012-10-05 10:16:20.479031971 -0700
+@@ -27,6 +27,9 @@
+    double rounding.  See a paper by Boldo and Melquiond:
+    http://www.lri.fr/~melquion/doc/08-tc.pdf  */
+ 
++#define FE_TOWARDZERO 0xc00000
++#define FE_INEXACT 16
++
+ double
+ __fma (double x, double y, double z)
+ {

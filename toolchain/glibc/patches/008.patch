@@ -1,0 +1,12 @@
+--- sysdeps/ieee754/dbl-64/s_fmaf.c.bak	2012-10-05 10:17:45.887041988 -0700
++++ sysdeps/ieee754/dbl-64/s_fmaf.c	2012-10-05 10:18:36.123034641 -0700
+@@ -28,6 +28,9 @@
+    See a paper by Boldo and Melquiond:
+    http://www.lri.fr/~melquion/doc/08-tc.pdf  */
+ 
++#define FE_TOWARDZERO 0xc00000
++#define FE_INEXACT 16
++
+ float
+ __fmaf (float x, float y, float z)
+ {

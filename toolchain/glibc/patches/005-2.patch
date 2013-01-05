@@ -1,0 +1,11 @@
+--- elf/dl-tls.c.bak	2012-10-05 10:09:38.123031604 -0700
++++ elf/dl-tls.c	2012-10-05 10:10:23.351031982 -0700
+@@ -29,6 +29,8 @@
+ #include <dl-tls.h>
+ #include <ldsodefs.h>
+ 
++#define TLS_DTV_UNALLOCATED ((void *) -1l)
++
+ /* Amount of excess space to allocate in the static TLS area
+    to allow dynamic loading of modules defining IE-model TLS data.  */
+ #define TLS_STATIC_SURPLUS	64 + DL_NNS * 100

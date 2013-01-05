@@ -1,0 +1,15 @@
+--- sysdeps/unix/syscall-template.S.bak	2012-10-05 09:36:49.303028820 -0700
++++ sysdeps/unix/syscall-template.S	2012-10-05 09:44:54.223035944 -0700
+@@ -48,6 +48,12 @@
+ # include <sysdep.h>
+ #endif
+ 
++#define PSEUDO(name, syscall_name, args)	\
++	.text;	\
++	ENTRY(name);	\
++	DO_CALL(syscall_name, args);	\
++	cmn r0, $4096;
++
+ #define T_PSEUDO(SYMBOL, NAME, N)		PSEUDO (SYMBOL, NAME, N)
+ #define T_PSEUDO_NOERRNO(SYMBOL, NAME, N)	PSEUDO_NOERRNO (SYMBOL, NAME, N)
+ #define T_PSEUDO_ERRVAL(SYMBOL, NAME, N)	PSEUDO_ERRVAL (SYMBOL, NAME, N)

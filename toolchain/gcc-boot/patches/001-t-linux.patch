@@ -1,0 +1,11 @@
+--- gcc/config/arm/t-linux.bak	2012-10-04 10:07:13.994757268 -0700
++++ gcc/config/arm/t-linux	2012-10-04 10:06:23.670759947 -0700
+@@ -19,7 +19,7 @@
+ 
+ # Just for these, we omit the frame pointer since it makes such a big
+ # difference.
+-TARGET_LIBGCC2_CFLAGS = -fomit-frame-pointer -fPIC
++TARGET_LIBGCC2_CFLAGS = -fomit-frame-pointer -fPIC -Dinhibit_libc -D__gthr_posix_h
+ 
+ LIB1ASMSRC = arm/lib1funcs.asm
+ LIB1ASMFUNCS = _udivsi3 _divsi3 _umodsi3 _modsi3 _dvmd_lnx _clzsi2 _clzdi2 \

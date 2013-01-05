@@ -1,0 +1,8 @@
+--- lib/libc.so.bak	2012-10-05 11:47:48.275049707 -0700
++++ lib/libc.so	2012-10-05 11:49:34.067050037 -0700
+@@ -2,4 +2,4 @@
+    Use the shared library, but some functions are only in
+    the static library, so try that secondarily.  */
+ OUTPUT_FORMAT(elf32-littlearm)
+-GROUP ( /lib/libc.so.6 /lib/libc_nonshared.a  AS_NEEDED ( /lib/ld-linux.so.2 ) )
++GROUP ( libc.so.6 libc_nonshared.a)

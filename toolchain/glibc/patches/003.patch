@@ -1,0 +1,16 @@
+--- ports/sysdeps/unix/sysv/linux/arm/sigrestorer.S.bak	2012-10-05 09:33:43.627017177 -0700
++++ ports/sysdeps/unix/sysv/linux/arm/sigrestorer.S	2012-10-05 09:35:23.391024923 -0700
+@@ -23,11 +23,13 @@
+    instruction on the stack, which would involve expensive cache flushes. */
+ 
+ ENTRY(__default_sa_restorer)
++END(__default_sa_restorer)
+ 	swi	SYS_ify(sigreturn)
+ 
+ #ifdef __NR_rt_sigreturn
+ 
+ ENTRY(__default_rt_sa_restorer)
++END(__default_rt_sa_restorer)
+ 	swi	SYS_ify(rt_sigreturn)
+ 
+ #endif

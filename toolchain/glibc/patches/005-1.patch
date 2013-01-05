@@ -1,0 +1,11 @@
+--- nptl/allocatestack.c.bak	2012-10-05 10:37:05.715036163 -0700
++++ nptl/allocatestack.c	2012-10-05 10:38:13.911041035 -0700
+@@ -32,6 +32,8 @@
+ #include <kernel-features.h>
+ 
+ 
++#define TLS_DTV_UNALLOCATED ((void *) -1l)
++
+ #ifndef NEED_SEPARATE_REGISTER_STACK
+ 
+ /* Most architectures have exactly one stack pointer.  Some have more.  */
